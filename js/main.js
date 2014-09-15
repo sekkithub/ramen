@@ -1,13 +1,19 @@
-$("#projects").click(function() {
-    $('#projectsWrapper').animate({ 
+// Open About modal
+$(".info").click(function() {
+    $('#aboutWrapper').animate({ 
         opacity: 1
     }, 1, function(){
         $(this).css({
-            visibility: 'visible',
-            opacity: .96
+            visibility: 'visible'
         }).hide().fadeIn(300);
 	});
 });
 
-var year = new Date().getFullYear();
-$('.year').text(year);
+// Close button for modal
+$(".btnClose").click(function() {
+    $('#aboutWrapper').animate({
+        opacity: 0
+    }, 300, function() {
+        $(this).css('visibility', 'hidden');
+    });
+});
