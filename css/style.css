@@ -1,7 +1,11 @@
-@import url(//fonts.googleapis.com/css?family=Lato:300,400,700);
-body, #aboutWrapper h3, #aboutWrapper .aboutContents ul {
-  font-family: 'Lato', sans-serif;
+@import url(http://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans:400,300,700,600);
+body, #aboutWrapper .aboutContents ul {
+  font-family: 'Open Sans', sans-serif;
   letter-spacing: .07em;
+}
+
+#aboutWrapper h3 {
+  font-family: 'Fjalla One', sans-serif;
 }
 
 * {
@@ -112,9 +116,10 @@ li {
 }
 #aboutWrapper h3 {
   color: #fff;
-  font-size: 167%;
+  font-size: 225%;
   left: 50%;
-  margin: 0  0 0 -157px;
+  letter-spacing: .01em;
+  margin: 0  0 0 -143px;
   position: absolute;
   top: 80px;
 }
@@ -181,6 +186,7 @@ li {
   transform: rotate(135deg);
 }
 #aboutWrapper .aboutContents {
+  background: url(../images/aboutBg.jpg) no-repeat center center fixed;
   bottom: 0;
   left: 0;
   margin: auto;
@@ -188,37 +194,53 @@ li {
   right: 0;
   top: 0;
   z-index: -10;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 #aboutWrapper .aboutContents ul {
   bottom: 0;
-  font-size: 1.3em;
+  font-size: .9em;
   font-weight: 400;
   height: 354px;
   left: 0;
-  line-height: 32px;
+  letter-spacing: .02em;
+  line-height: 20px;
   margin: auto;
   padding: 0;
   position: absolute;
   right: 0;
   top: 0;
-  width: 900px;
   z-index: 10;
 }
-#aboutWrapper .aboutContents li {
-  list-style: none;
+#aboutWrapper .aboutContents .bubbleYuriy,
+#aboutWrapper .aboutContents .bubbleMasato {
+  background: #fff;
+  margin: 16px auto;
+  padding: 11px 16px;
+  position: relative;
+  width: 550px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
 }
-#aboutWrapper .aboutContents li div {
-  padding: 0.2em 0;
+#aboutWrapper .aboutContents .bubbleYuriy:after,
+#aboutWrapper .aboutContents .bubbleMasato:after {
+  border-style: solid;
+  border-color: transparent #fff;
+  content: "";
+  position: absolute;
+  top: 13px;
+  display: block;
+  width: 0;
+  z-index: 1;
 }
-#aboutWrapper .aboutContents li .date, #aboutWrapper .aboutContents li .title {
-  float: left;
+#aboutWrapper .aboutContents .bubbleYuriy:after {
+  border-width: 8px 8px 8px 0;
+  left: -8px;
 }
-#aboutWrapper .aboutContents li .date {
-  width: 160px;
-}
-#aboutWrapper .aboutContents li .title {
-  width: 560px;
-}
-#aboutWrapper .aboutContents li a {
-  color: #000;
+#aboutWrapper .aboutContents .bubbleMasato:after {
+  border-width: 8px 0 8px 8px;
+  right: -8px;
 }
