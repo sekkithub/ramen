@@ -68,13 +68,12 @@ li {
 }
 
 .logo {
-    border: 2px solid #000;
-    width: 140px;
-    height: 150px;
+    width: 120px;
+    height: 129px;
     position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 100;
+    top: 20px;
+    left: 20px;
+    z-index: 10000;
 }
 
 .info {
@@ -210,7 +209,7 @@ li {
             bottom: 0;
             font-size: .9em;
             font-weight: 400;
-            height: 354px;
+            height: 330px;
             left: 0;
             letter-spacing: .02em;
             line-height: 20px;
@@ -219,6 +218,7 @@ li {
             position: absolute;
             right: 0;
             top: 0;
+            width: 720px;
             z-index: 10;
         }
 
@@ -230,7 +230,21 @@ li {
             position: relative;
             width: 550px;
             @include border-radius(3px);
+            
+            img {
+                position: absolute;
+                top: -3px;
+            }
         }
+
+        .bubbleYuriy img {
+            left: -70px;
+        }
+        
+        .bubbleMasato img {
+            right: -70px;
+        }
+
 
         .bubbleYuriy:after,
         .bubbleMasato:after {
@@ -248,12 +262,12 @@ li {
             border-width: 8px 8px 8px 0;
             left: -8px;
         }
-        
+
         .bubbleMasato:after {
             border-width: 8px 0 8px 8px;
             right: -8px;
         }
-
+        
 
     }
 

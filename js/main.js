@@ -17,3 +17,6 @@ $(".btnClose").click(function() {
         $(this).css('visibility', 'hidden');
     });
 });
+
+$(".bubbleYuriy").prepend('<img src="images/iconYuiry.png" />')
+$(".bubbleMasato").prepend('<img src="images/iconMasato.png" />')

@@ -20,7 +20,7 @@ var infowindow = new google.maps.InfoWindow();
 
 var marker, i;
 var markers = new Array();
-var image = 'images/baloon.png';
+var image = 'images/baloon.gif';
 
 for (i = 0; i < locations.length; i++) {  
 	marker = new google.maps.Marker({
