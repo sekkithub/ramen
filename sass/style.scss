@@ -1,7 +1,7 @@
 @import "compass";
 @import "ptp-12";
 @import url(http://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans:400,300,700,600);
-
+@import 'compass/css3/filter';
 
 %openSans {
   font-family: 'Open Sans', sans-serif;
@@ -74,6 +74,11 @@ li {
     top: 20px;
     left: 20px;
     z-index: 10000;
+    
+    img.invert {
+        @include filter(invert(100%));
+        @include transition(all .3s linear);
+    }
 }
 
 .info {
@@ -96,14 +101,6 @@ li {
         padding-left: 1px;
     }
 }
-
-/*
-    @include transform(translateY(12px));
-    @include transition(all 0.3s ease-in-out);
-*/
-
-
-
 
 #aboutWrapper {
     background: #000;
@@ -233,7 +230,7 @@ li {
             
             img {
                 position: absolute;
-                top: -3px;
+                top: -4px;
             }
         }
 
@@ -267,8 +264,14 @@ li {
             border-width: 8px 0 8px 8px;
             right: -8px;
         }
-        
 
+        a {
+            color: #000;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #999;
+        }
     }
 
 }

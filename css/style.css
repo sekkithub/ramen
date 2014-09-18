@@ -67,6 +67,14 @@ li {
   left: 20px;
   z-index: 10000;
 }
+.logo img.invert {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
 
 .info {
   -moz-border-radius: 15px;
@@ -90,10 +98,6 @@ li {
   padding-left: 1px;
 }
 
-/*
-    @include transform(translateY(12px));
-    @include transition(all 0.3s ease-in-out);
-*/
 #aboutWrapper {
   background: #000;
   height: 100%;
@@ -228,7 +232,7 @@ li {
 #aboutWrapper .aboutContents .bubbleYuriy img,
 #aboutWrapper .aboutContents .bubbleMasato img {
   position: absolute;
-  top: -3px;
+  top: -4px;
 }
 #aboutWrapper .aboutContents .bubbleYuriy img {
   left: -70px;
@@ -254,4 +258,11 @@ li {
 #aboutWrapper .aboutContents .bubbleMasato:after {
   border-width: 8px 0 8px 8px;
   right: -8px;
+}
+#aboutWrapper .aboutContents a {
+  color: #000;
+  text-decoration: underline;
+}
+#aboutWrapper .aboutContents a:hover {
+  color: #999;
 }

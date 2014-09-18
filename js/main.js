@@ -5,16 +5,18 @@ $(".info").click(function() {
     }, 1, function(){
         $(this).css({
             visibility: 'visible'
-        }).hide().fadeIn(300);
+        }).hide().fadeIn(300),
+        $('.logo img').addClass('invert')
 	});
 });
 
 // Close button for modal
 $(".btnClose").click(function() {
+    $('.logo img').removeClass('invert'),
     $('#aboutWrapper').animate({
         opacity: 0
     }, 300, function() {
-        $(this).css('visibility', 'hidden');
+        $(this).css('visibility', 'hidden')
     });
 });
 
