@@ -2,6 +2,8 @@
 @import "ptp-12";
 @import url(http://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans:400,300,700,600);
 @import 'compass/css3/filter';
+@import "compass/utilities/sprites";
+
 
 %openSans {
   font-family: 'Open Sans', sans-serif;
@@ -68,6 +70,8 @@ li {
 }
 
 .logo {
+    $logo: sprite-map("logo/*.png");
+    background: $logo;
     width: 120px;
     height: 129px;
     position: fixed;
@@ -78,8 +82,12 @@ li {
     img.invert {
         @include filter(invert(100%));
         @include transition(all .3s linear);
+        filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="invert"><feColorMatrix color-interpolation-filters="sRGB" in="SourceGraphic" type="matrix" values="-1,0,0,0,1,0,-1,0,0,1,0,0,-1,0,1,0,0,0,1,0"/></filter></svg>#invert');
+        filter: invert(100%);
+        -ms-filter: invert(100%);
     }
 }
+
 
 .info {
     @include border-radius(15px);

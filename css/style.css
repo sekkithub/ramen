@@ -60,6 +60,7 @@ li {
 }
 
 .logo {
+  background: url('../images/logo-s681744398c.png');
   width: 120px;
   height: 129px;
   position: fixed;
@@ -74,6 +75,9 @@ li {
   -o-transition: all 0.3s linear;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
+  filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="invert"><feColorMatrix color-interpolation-filters="sRGB" in="SourceGraphic" type="matrix" values="-1,0,0,0,1,0,-1,0,0,1,0,0,-1,0,1,0,0,0,1,0"/></filter></svg>#invert');
+  filter: invert(100%);
+  -ms-filter: invert(100%);
 }
 
 .info {
