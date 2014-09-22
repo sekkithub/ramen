@@ -205,6 +205,11 @@ li {
   -o-background-size: cover;
   -webkit-background-size: cover;
   background-size: cover;
+  /*
+          .bubbleChat {
+              opacity: 0;
+          }
+  */
 }
 #aboutWrapper .aboutContents ul {
   bottom: 0;
@@ -221,6 +226,9 @@ li {
   top: 0;
   width: 720px;
   z-index: 10;
+}
+#aboutWrapper .aboutContents ul li {
+  position: relative;
 }
 #aboutWrapper .aboutContents .bubbleYuriy,
 #aboutWrapper .aboutContents .bubbleMasato {

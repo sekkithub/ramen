@@ -4,7 +4,6 @@
 @import 'compass/css3/filter';
 @import "compass/utilities/sprites";
 
-
 %openSans {
   font-family: 'Open Sans', sans-serif;
   letter-spacing: .07em;
@@ -52,8 +51,6 @@ li {
     height: 100%;
     width: 100%;
 }
-
-
 
 /*
 	SNS buttons Section
@@ -225,7 +222,19 @@ li {
             top: 0;
             width: 720px;
             z-index: 10;
+        
+            li {
+                position: relative;
+            }
+        
         }
+        
+        
+/*
+        .bubbleChat {
+            opacity: 0;
+        }
+*/
 
         .bubbleYuriy,
         .bubbleMasato {
