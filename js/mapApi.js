@@ -1,19 +1,11 @@
-var locations = [
-	['Bone Daddies Ramen Bar', 51.51282, -0.133872],
-	['Shoryu', 51.510884, -0.134312],
-	['Ittenbari', 51.510751, -0.137228],
-	['Tonkotsu East', 51.537058, -0.076212],
-	['Ramen Seto', 51.536211, -0.139058]
-];
-
 var map = new google.maps.Map(document.getElementById('mapCanvas'), {
-	zoom: 14,
-	center: new google.maps.LatLng(51.50722, -0.12750),
-	mapTypeId: google.maps.MapTypeId.ROADMAP,
-	mapTypeControl: false,
-	panControl: false,
-	zoomControl: false,
-	streetViewControl: false
+    zoom: 14,
+    center: new google.maps.LatLng(51.50722, -0.12750),
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    mapTypeControl: false,
+    panControl: false,
+    zoomControl: false,
+    streetViewControl: false
 });
 
 var infowindow = new google.maps.InfoWindow();
@@ -23,38 +15,38 @@ var markers = new Array();
 var image = 'images/baloon.png';
 
 for (i = 0; i < locations.length; i++) {  
-	marker = new google.maps.Marker({
-		content: [],
-		position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-		animation: google.maps.Animation.DROP,
-		map: map,
-		icon: image
-	});
+    marker = new google.maps.Marker({
+        content: [],
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        animation: google.maps.Animation.DROP,
+        map: map,
+        icon: image
+    });
 
-	markers.push(marker);
+    markers.push(marker);
 
-	google.maps.event.addListener(marker, 'click', (function(marker, i) {
-		return function() {
-			infowindow.setContent(locations[i][0]);
-			infowindow.open(map, marker);
-		}
-	})(marker, i));
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+            infowindow.setContent(locations[i][0]);
+            infowindow.open(map, marker);
+        }
+    })(marker, i));
 }
 
 function drop() {
-	for (var i =0; i < marker.length; i++) {
-		setTimeout(function() {
-			addMarkerMethod();
-		}, i * 200);
-	}
+    for (var i =0; i < marker.length; i++) {
+        setTimeout(function() {
+            addMarkerMethod();
+        }, i * 200);
+    }
 }
 
 function toggleBounce() {
-	if (marker.getAnimation() != null) {
-		marker.setAnimation(null);
-	} else {
-		marker.setAnimation(google.maps.Animation.BOUNCE);
-	}
+    if (marker.getAnimation() != null) {
+        marker.setAnimation(null);
+    } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+    }
 }
 
 
