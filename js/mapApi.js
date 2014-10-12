@@ -14,10 +14,10 @@ var marker, i;
 var markers = new Array();
 var image = 'images/baloon.png';
 
-for (i = 0; i < locations.length; i++) {  
+for (i = 0; i < shops.length; i++) {  
     marker = new google.maps.Marker({
         content: [],
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        position: new google.maps.LatLng(shops[i][1], shops[i][2]),
         animation: google.maps.Animation.DROP,
         map: map,
         icon: image
@@ -27,7 +27,13 @@ for (i = 0; i < locations.length; i++) {
 
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-            infowindow.setContent(locations[i][0]);
+            infowindow.setContent(
+                '<div class="shopLogo"><img src="images/logo/' + shops[i][3] + '"></div>' +
+                '<h2>' + shops[i][0] + '</h2>' +
+                '<p class="shopAddress">' + shops[i][4] + '</p>' +
+                '<p class="shopTel">' + shops[i][5] + '</p>' +
+                '<span class="shopLink">' + shops[i][6] + '</span>'
+            );
             infowindow.open(map, marker);
         }
     })(marker, i));
