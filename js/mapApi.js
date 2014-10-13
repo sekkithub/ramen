@@ -32,7 +32,7 @@ for (i = 0; i < shops.length; i++) {
                 '<h2>' + shops[i][0] + '</h2>' +
                 '<p class="shopAddress">' + shops[i][4] + '</p>' +
                 '<p class="shopTel">' + shops[i][5] + '</p>' +
-                '<span class="shopLink">' + shops[i][6] + '</span>'
+                '<span class="shopLink"><a href="http://' + shops[i][6] + '" target="_blank">' + shops[i][6] + '</a></span>'
             );
             infowindow.open(map, marker);
         }
