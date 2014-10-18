@@ -32,9 +32,39 @@
         </script>
         <div id="wrapper">
             <div class="logo"></div>
+<!--
             <div class="info">
                 <span>i</span>
             </div>
+-->
+            <canvas id="info" width="30" height="30"></canvas>
+            <script>
+                var canvas = document.getElementById('info');
+                var context = canvas.getContext('2d');
+                
+                // set line width for all lines
+                context.lineWidth = 2;
+
+                // round line join (middle)
+/*
+                context.beginPath();
+                context.moveTo(239, 150);
+                context.lineTo(289, 20);
+                context.lineTo(339, 150);
+                context.lineJoin = 'round';
+                context.stroke();
+*/
+                context.beginPath();
+                context.moveTo(14, 14);
+                context.lineTo(14, 25);
+                context.lineWidth = 1;
+                context.strokeStyle = '#0000ff';
+                context.lineCap = 'round';
+                context.stroke();
+              </script>
+
+            
+            
             <section id="mapCanvas"></section>
         </div>
 
@@ -93,3 +123,4 @@
         
     </body>
 </html>
+
