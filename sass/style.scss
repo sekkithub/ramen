@@ -85,6 +85,26 @@ li {
     }
 }
 
+.infoWindowWrapper {
+    padding: 10px 0 10px 10px;
+    letter-spacing: 0;
+
+    .shopLogo {
+        float: left;
+        margin-right: 30px;
+    }
+    
+    h2 {
+        font-size: $px16;
+        margin: 0;
+    }
+
+}
+
+#infoWindow {
+    width: 150px !important;
+}
+
 
 .info {
     @include border-radius(15px);

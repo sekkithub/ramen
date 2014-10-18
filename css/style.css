@@ -80,6 +80,23 @@ li {
   -ms-filter: invert(100%);
 }
 
+.infoWindowWrapper {
+  padding: 10px 0 10px 10px;
+  letter-spacing: 0;
+}
+.infoWindowWrapper .shopLogo {
+  float: left;
+  margin-right: 30px;
+}
+.infoWindowWrapper h2 {
+  font-size: 134%;
+  margin: 0;
+}
+
+#infoWindow {
+  width: 150px !important;
+}
+
 .info {
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;

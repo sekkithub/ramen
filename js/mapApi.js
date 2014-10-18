@@ -28,11 +28,13 @@ for (i = 0; i < shops.length; i++) {
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
             infowindow.setContent(
-                '<div class="shopLogo"><img src="images/logo/' + shops[i][3] + '"></div>' +
-                '<h2>' + shops[i][0] + '</h2>' +
-                '<p class="shopAddress">' + shops[i][4] + '</p>' +
-                '<p class="shopTel">' + shops[i][5] + '</p>' +
-                '<span class="shopLink"><a href="http://' + shops[i][6] + '" target="_blank">' + shops[i][6] + '</a></span>'
+                '<div class="infoWindowWrapper">' +
+                    '<div class="shopLogo"><img src="images/shopLogos/' + shops[i][3] + '"></div>' +
+                    '<h2>' + shops[i][0] + '</h2>' +
+                    '<p class="shopAddress">' + shops[i][4] + '</p>' +
+                    '<p class="shopTel">' + shops[i][5] + '</p>' +
+                    '<span class="shopLink"><a href="http://' + shops[i][6] + '" target="_blank">' + shops[i][6] + '</a></span>' +
+                '</div>'
             );
             infowindow.open(map, marker);
         }
@@ -67,4 +69,3 @@ bounds.extend(marker.position);
 map.fitBounds(bounds);
 }
 AutoCenter();
-
