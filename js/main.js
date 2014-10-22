@@ -15,7 +15,7 @@ $.fn.animateBG = function(x, y, speed) {
 
 
 // Open About modal
-$("#info").click(function() {
+$(".infoIcon").click(function() {
     // List appears delay
     $('.aboutContents ul li').css({
         top : '100px',

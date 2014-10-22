@@ -32,51 +32,14 @@
         </script>
         <div id="wrapper">
             <div class="logo"></div>
-<!--
             <div class="info">
-                <span>i</span>
+                <div class="infoIcon">
+                    <span class="infoDot"></span>
+                    <span class="infoLine"></span>
+                </div>
             </div>
--->
-            <canvas id="info" width="30" height="30"></canvas>
-            <script>
-                var canvas = document.getElementById('info');
-                var ctx = canvas.getContext('2d');
-
-                ctx.beginPath();
-                ctx.arc(15,15,14,0,Math.PI*2,true);
-                ctx.fillStyle="#000";
-                ctx.fill();
-                ctx.stroke();
-
-
-                ctx.beginPath();
-                ctx.arc(15,9,1,0,Math.PI*2,true);
-                ctx.fillStyle="#fff";
-                ctx.strokeStyle = '#fff';
-                ctx.lineWidth = 2;
-                ctx.fill();
-                ctx.stroke();
-
-                ctx.beginPath();
-                ctx.moveTo(15, 14);
-                ctx.lineTo(15, 22);
-                ctx.fillStyle="#fff";
-                ctx.strokeStyle = '#fff';
-                ctx.lineWidth = 3;
-                ctx.lineCap = 'round';
-                ctx.stroke();
-
-
-              </script>
-
-            
-            
             <section id="mapCanvas"></section>
-        </div>
-
-        <div id="aboutWrapper">
-            <div id="aboutFrame">
-                <h3>ABOUT THE PROJECT</h3>
+        </div>`
                 <div id="close">
                     <a class="btnClose">
                         <span class="line"></span>
@@ -126,6 +89,6 @@
           ga('create', 'UA-45171081-7', 'auto');
           ga('send', 'pageview');
         </script>
-        
+
     </body>
 </html>
