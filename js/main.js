@@ -38,6 +38,30 @@ $(".infoIcon").click(function() {
 	});
 });
 
+
+$(function() {
+    var trigger = $('#hamburger'),
+        isClosed = true;
+    
+    trigger.click(function () {
+      burgerTime();
+    });
+    
+    function burgerTime() {
+      if (isClosed == true) {
+        trigger.removeClass('is-open');
+        trigger.addClass('is-closed');
+        isClosed = false;
+      } else {
+        trigger.removeClass('is-closed');
+        trigger.addClass('is-open');
+        isClosed = true;
+      }
+    }
+});
+
+
+
 // Close button for modal
 $(".btnClose, .logo").click(function() {
     $('.logo').animateBG(0, 0, 300),
@@ -52,4 +76,5 @@ $(".btnClose, .logo").click(function() {
 
 $(".bubbleYuriy").prepend('<a href="http://oparenko.com/" target="_blank" title="oparenko.com"><img src="images/iconYuiry.png" /></a>')
 $(".bubbleMasato").prepend('<a href="http://sekkithub.com/" target="_blank" title="sekkithub.com"><img src="images/iconMasato.png" /></a>')
+
 
