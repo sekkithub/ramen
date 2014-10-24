@@ -25,6 +25,42 @@ for (i = 0; i < shops.length; i++) {
 
     markers.push(marker);
 
+    var boxText = document.createElement("div");
+    boxText.style.cssText = "background: #fff; padding: 8px 15px;";
+
+    var boxOptions = {
+        content: boxText
+        ,disableAutoPan: false
+        ,maxWidth: 0
+        ,pixelOffset: new google.maps.Size(-140, 0)
+        ,zIndex: null
+        ,boxStyle: { 
+            width: "340px"
+        }
+        ,infoBoxClearance: new google.maps.Size(1, 1)
+        ,isHidden: false
+        ,pane: "floatPane"
+        ,enableEventPropagation: false
+    };
+    
+    var ib = new InfoBox();
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+            ib.setOptions(boxOptions);
+            boxText.innerHTML =
+                 '<div class="infoWindowWrapper">' +
+                    '<div class="shopLogo"><img src="images/shopLogos/' + shops[i][3] + '"></div>' +
+                    '<h2>' + shops[i][0] + '</h2>' +
+                    '<p class="shopAddress">' + shops[i][4] + '</p>' +
+                    '<p class="shopTel">' + shops[i][5] + '</p>' +
+                    '<span class="shopLink"><a href="http://' + shops[i][6] + '" target="_blank">' + shops[i][6] + '</a></span>' +
+                '</div>'
+            ;
+            ib.open(map, marker);
+            map.panTo(pos);
+        }
+    })(marker, i)); 
+/*
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
             infowindow.setContent(
@@ -39,6 +75,7 @@ for (i = 0; i < shops.length; i++) {
             infowindow.open(map, marker);
         }
     })(marker, i));
+*/
 }
 
 function drop() {

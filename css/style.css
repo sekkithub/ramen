@@ -679,6 +679,10 @@ li {
     transition-property: background-color;
   }
 }
+.shopLink a {
+  color: #cb0019;
+}
+
 #aboutWrapper {
   background: #000;
   height: 100%;
