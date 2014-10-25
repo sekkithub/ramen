@@ -31,10 +31,12 @@ for (i = 0; i < shops.length; i++) {
     var boxOptions = {
         content: boxText
         ,disableAutoPan: false
-        ,maxWidth: 0
+        ,maxWidth: 400
         ,pixelOffset: new google.maps.Size(-140, 0)
         ,zIndex: null
         ,boxStyle: {width: "340px"}
+        ,closeBoxMargin: "10px"
+        ,closeBoxURL: "images/close.png"
         ,infoBoxClearance: new google.maps.Size(1, 1)
         ,isHidden: false
         ,pane: "floatPane"
