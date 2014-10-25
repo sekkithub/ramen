@@ -81,7 +81,6 @@ li {
 }
 
 .infoWindowWrapper {
-  padding: 10px 0 10px 10px;
   letter-spacing: 0;
 }
 .infoWindowWrapper .shopLogo {
@@ -89,8 +88,15 @@ li {
   margin-right: 30px;
 }
 .infoWindowWrapper h2 {
-  font-size: 134%;
+  font-size: 150%;
   margin: 0;
+}
+.infoWindowWrapper p, .infoWindowWrapper span {
+  font-size: 109%;
+  margin-top: 8px;
+}
+.infoWindowWrapper span {
+  display: block;
 }
 
 .hamburglar {

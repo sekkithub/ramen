@@ -8,7 +8,7 @@ var shops = [
     ['Bento Ramen', 51.538246, -0.144125, 'tonkotsuEastLogo.png', 'Arch 334, 1a Dunston Street, E8 4EB', '020 7254 2478', 'tonkotsu.co.uk'],
     ['Sasuke Ramen', 51.511494,-0.134603, 'tonkotsuEastLogo.png', 'Arch 334, 1a Dunston Street, E8 4EB', '020 7254 2478', 'tonkotsu.co.uk'],
     ['United Ramen', 51.537854,-0.102858, 'tonkotsuEastLogo.png', 'Arch 334, 1a Dunston Street, E8 4EB', '020 7254 2478', 'tonkotsu.co.uk'],
-    ['Ramen Seto', 51.537854,-0.102858, 'tonkotsuEastLogo.png', 'Arch 334, 1a Dunston Street, E8 4EB', '020 7254 2478', 'tonkotsu.co.uk'],
+    ['Ramen Seto', 51.537854,-0.102858, 'tonkotsuEastLogo.png', 'Arch 334, 1a Dunston Street, E8 4EB, Arch 334, 1a Dunston Street, E8 4EB, Arch 334, 1a Dunston Street, E8 4EB', '020 7254 2478', 'tonkotsu.co.uk'],
     ['Cocoro Marylebone Ln', 51.516801,-0.150795, 'tonkotsuEastLogo.png', 'Arch 334, 1a Dunston Street, E8 4EB', '020 7254 2478', 'tonkotsu.co.uk'],
     ['Cocoro Coptic St', 51.517261,-0.125965, 'tonkotsuEastLogo.png', 'Arch 334, 1a Dunston Street, E8 4EB', '020 7254 2478', 'tonkotsu.co.uk'],
     ['Ittenbari', 51.510751,-0.137195, 'tonkotsuEastLogo.png', 'Arch 334, 1a Dunston Street, E8 4EB', '020 7254 2478', 'tonkotsu.co.uk'],
