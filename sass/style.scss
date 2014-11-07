@@ -116,14 +116,19 @@ li {
 {
   background: #f1f0ee;
   box-sizing: border-box;
-  left:-180px;
+  height: 145px;
+  left:-194px;
   letter-spacing: 0;
+  min-width: 390px;
   padding: 20px;
   position: relative;
-  top: -220px;
-  width: 360px;
+  top: -216px;
   @include border-radius(5px);
   @include box-shadow(rgba(0,0,0,0.3) 0px 4px 10px);
+
+  .movableContents {
+    margin: 4px 0 0 127px;
+  }
 
   h4 {
     font-size: 17px;
@@ -136,18 +141,33 @@ li {
     margin: 0 0 6px 0;
     font-size: 13px;
   }
+ 
+  .shopContents {
+    float: right;
+    width: 100%;
+    margin: 0 0 0 -250px;
+  }
   
   .shopLogo {
+/*
     display: table-cell;
     vertical-align: middle;
+*/
+    float: left;
+    width: 107px;
+    background: #ddd;
     
+/*
     img {
       margin-right: 15px;
     }
+*/
     
+/*
     span {
       font-size: 14px;
     }
+*/
   }
   
 }
@@ -375,6 +395,7 @@ $scale: 1;    // icon scale 68/68 default
 .shopLink {
     a {
         color: #cb0019;
+        font-size: 14px;
     }
 }
 

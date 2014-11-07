@@ -49,15 +49,18 @@ for (i = 0; i < shops.length; i++) {
             boxText.innerHTML =
               '<div class="infoWindowWrapper">' +
                 '<div class="shopLogo"><img src="images/shopLogos/' + shops[i][3] + '"></div>' +
-                '<div class="shopLogo">' +
-                  '<h4>' + shops[i][0] + '</h4>' +
-                  '<p class="shopAddress">' + shops[i][4] + '</p>' +
-                  '<p class="shopTel">' + shops[i][5] + '</p>' +
-                  '<span class="shopLink"><a href="http://' + shops[i][6] + '" target="_blank">' + shops[i][6] + '</a></span>' +
+                '<div class="shopContents">' +
+                '<div class="movableContents">' +
+                    '<h4>' + shops[i][0] + '</h4>' +
+                    '<p class="shopAddress">' + shops[i][4] + '</p>' +
+                    '<p class="shopTel">' + shops[i][5] + '</p>' +
+                    '<span class="shopLink"><a href="http://' + shops[i][6] + '" target="_blank">' + shops[i][6] + '</a></span>' +
+                    '</div>' +
                 '</div>' +
               '</div>'
             ;
             ib.open(map, marker);
+            map.panTo(marker.getPosition({animate: true, duration: 1.0}));
         }
     })(marker, i));
 }

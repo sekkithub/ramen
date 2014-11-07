@@ -245,8 +245,8 @@ InfoBox.prototype.getCloseBoxImg_ = function () {
     img += " position: absolute;"; // Required by MSIE
     img += " cursor: pointer;";
     img += " margin: " + this.closeBoxMargin_ + ";";
-    img += " top: -222px;";
-    img += " right: -182px;";
+    img += " top: -216px;";
+    img += " right: -196px;";
     img += " z-index: 1000;";
     img += "'>";
   }
