@@ -86,6 +86,7 @@ li {
     }
 }
 
+/*
 .infoWindowWrapper {
     letter-spacing: 0;
 
@@ -108,6 +109,62 @@ li {
         display: block;
     }
 
+}
+*/
+
+.infoWindowWrapper
+{
+  background: #f1f0ee;
+  box-sizing: border-box;
+  left:-180px;
+  letter-spacing: 0;
+  padding: 20px;
+  position: relative;
+  top: -220px;
+  width: 360px;
+  @include border-radius(5px);
+  @include box-shadow(rgba(0,0,0,0.3) 0px 4px 10px);
+
+  h4 {
+    font-size: 17px;
+    margin: 0 0 6px 0;
+  }
+
+  p {
+    display: block;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    margin: 0 0 6px 0;
+    font-size: 13px;
+  }
+  
+  .shopLogo {
+    display: table-cell;
+    vertical-align: middle;
+    
+    img {
+      margin-right: 15px;
+    }
+    
+    span {
+      font-size: 14px;
+    }
+  }
+  
+}
+
+.infoWindowWrapper:after 
+{
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 8px 8px 0;
+  border-color: #f1f0ee transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  bottom: -8px;
+  left: 50%;
+  margin-left:-8px;
 }
 
 // Info Button Animation

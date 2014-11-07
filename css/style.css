@@ -80,23 +80,80 @@ li {
   -ms-filter: invert(100%);
 }
 
+/*
 .infoWindowWrapper {
+    letter-spacing: 0;
+
+    .shopLogo {
+        float: left;
+        margin-right: 30px;
+    }
+    
+    h2 {
+        font-size: $px18;
+        margin: 0;
+    }
+
+    p, span {
+        font-size: $px13;
+        margin-top: 8px;
+    }
+    
+    span {
+        display: block;
+    }
+
+}
+*/
+.infoWindowWrapper {
+  background: #f1f0ee;
+  box-sizing: border-box;
+  left: -180px;
   letter-spacing: 0;
+  padding: 20px;
+  position: relative;
+  top: -220px;
+  width: 360px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 10px;
+}
+.infoWindowWrapper h4 {
+  font-size: 17px;
+  margin: 0 0 6px 0;
+}
+.infoWindowWrapper p {
+  display: block;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  margin: 0 0 6px 0;
+  font-size: 13px;
 }
 .infoWindowWrapper .shopLogo {
-  float: left;
-  margin-right: 30px;
+  display: table-cell;
+  vertical-align: middle;
 }
-.infoWindowWrapper h2 {
-  font-size: 150%;
-  margin: 0;
+.infoWindowWrapper .shopLogo img {
+  margin-right: 15px;
 }
-.infoWindowWrapper p, .infoWindowWrapper span {
-  font-size: 109%;
-  margin-top: 8px;
+.infoWindowWrapper .shopLogo span {
+  font-size: 14px;
 }
-.infoWindowWrapper span {
+
+.infoWindowWrapper:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 8px 8px 0;
+  border-color: #f1f0ee transparent;
   display: block;
+  width: 0;
+  z-index: 1;
+  bottom: -8px;
+  left: 50%;
+  margin-left: -8px;
 }
 
 .hamburglar {
