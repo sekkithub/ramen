@@ -55,6 +55,12 @@ li {
   img {
     max-width: none;
   }
+  
+/*
+  .gmnoprint {
+    left: 35px !important;
+  }
+*/
 }
 
 
@@ -91,37 +97,11 @@ li {
     }
 }
 
-/*
-.infoWindowWrapper {
-    letter-spacing: 0;
-
-    .shopLogo {
-        float: left;
-        margin-right: 30px;
-    }
-    
-    h2 {
-        font-size: $px18;
-        margin: 0;
-    }
-
-    p, span {
-        font-size: $px13;
-        margin-top: 8px;
-    }
-    
-    span {
-        display: block;
-    }
-
-}
-*/
-
 .infoWindowWrapper
 {
   background: #f1f0ee;
   box-sizing: border-box;
-  height: 145px;
+  height: auto;
   left:-194px;
   letter-spacing: 0;
   min-width: 390px;
@@ -132,7 +112,7 @@ li {
   @include box-shadow(rgba(0,0,0,0.3) 0px 4px 10px);
 
   .movableContents {
-    margin: 4px 0 0 127px;
+    margin: 0 0 0 127px;
   }
 
   h4 {
@@ -148,20 +128,16 @@ li {
   }
 
   .shopContents {
+/*
     float: right;
     width: 100%;
     margin: 0 0 0 -250px;
+*/
   }
 
   .shopLogo {
-/*
-    display: table-cell;
-    vertical-align: middle;
-*/
-    float: left;
-    width: 107px;
     background: #ddd;
-    
+    float: left;
 /*
     img {
       margin-right: 15px;
@@ -189,17 +165,17 @@ li {
 
 .infoWindowWrapper:after 
 {
-  content: '';
-  position: absolute;
   border-style: solid;
   border-width: 8px 8px 0;
   border-color: #f1f0ee transparent;
-  display: block;
-  width: 0;
-  z-index: 1;
   bottom: -8px;
+  content: '';
+  display: block;
   left: 50%;
   margin-left:-8px;
+  position: absolute;
+  width: 0;
+  z-index: 1;
 }
 
 // Info Button Animation

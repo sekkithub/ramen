@@ -14,6 +14,10 @@ $.fn.animateBG = function(x, y, speed) {
 }
 
 
+var infoWindow = $('.infoWindowWrapper');
+var infoWindowHeight = $('.infoWindowWrapper').css({ height: infoWindow.height() });
+console.log(infoWindowHeight);
+
 // Open About modal
 $(function() {
     var trigger = $('#hamburger'),

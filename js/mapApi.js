@@ -1,12 +1,23 @@
-var map = new google.maps.Map(document.getElementById('mapCanvas'), {
-    zoom: 14,
-    center: new google.maps.LatLng(51.50722, -0.12750),
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
-    mapTypeControl: false,
-    panControl: true,
-    zoomControl: true,
-    streetViewControl: false
-});
+var mapOptions = {
+  zoom: 14,
+  center: new google.maps.LatLng(51.50722, -0.12750),
+  mapTypeId: google.maps.MapTypeId.ROADMAP,
+  mapTypeControl: false,
+  zoomControl: true,
+  zoomControlOptions: {
+      style: google.maps.ZoomControlStyle.LARGE,
+      position: google.maps.ControlPosition.LEFT_CENTER
+  },
+  panControl: true,
+  panControlOptions: {
+      position: google.maps.ControlPosition.LEFT_CENTER
+  },
+  scaleControl: false,
+  streetViewControl: false
+}
+
+var map = new google.maps.Map(document.getElementById('mapCanvas'),mapOptions);
+google.maps.event.addDomListener(window, 'load', mapOptions);
 
 var infowindow = new google.maps.InfoWindow();
 
