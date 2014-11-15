@@ -52,7 +52,9 @@ for (i = 0; i < shops.length; i++) {
                 '<div class="shopContents">' +
                 '<div class="movableContents">' +
                     '<h4>' + shops[i][0] + '</h4>' +
-                    '<p class="shopAddress">' + shops[i][4] + '</p>' +
+                    '<p class="shopAddress">' + shops[i][4] + ' ' +
+                      '<a href="https://www.google.com/maps/place/' + shops[i][1] + ',' + shops[i][2] + '" target="_blank">[open in GMaps]</a>' + 
+                    '</p>' +
                     '<p class="shopTel">' + shops[i][5] + '</p>' +
                     '<span class="shopLink"><a href="http://' + shops[i][6] + '" target="_blank">' + shops[i][6] + '</a></span>' +
                     '</div>' +

@@ -68,7 +68,7 @@ $(function() {
     }
 });
 
-$(".bubbleYuriy").prepend('<a href="http://oparenko.com/" target="_blank" title="oparenko.com"><img src="images/iconYuiry.png" /></a>')
-$(".bubbleMasato").prepend('<a href="http://sekkithub.com/" target="_blank" title="sekkithub.com"><img src="images/iconMasato.png" /></a>')
+$(".bubbleYuriy").prepend('<a href="http://oparenko.com/" target="_blank" title="Yuriy Oparenko\noparenko.com"><img src="images/iconYuiry.png" /></a>')
+$(".bubbleMasato").prepend('<a href="http://sekkithub.com/" target="_blank" title="Masato Seki\nsekkithub.com"><img src="images/iconMasato.png" /></a>')
 
 
