@@ -44,6 +44,9 @@ li {
   height: 100%;
   width: 100%;
 }
+#mapCanvas img {
+  max-width: none;
+}
 
 /*
 	SNS buttons Section
@@ -811,6 +814,7 @@ li {
   font-size: 40px;
   letter-spacing: 0;
   margin-top: 110px;
+  min-width: 720px;
   text-align: center;
 }
 #aboutWrapper .aboutContents ul {

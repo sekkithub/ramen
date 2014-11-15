@@ -1,5 +1,5 @@
 var shops = [
-    // ['Shop Name','Latitude','Longitude','Shop Logo Image Name','Address','Tel','Website URL']
+    // ['Shop Name','Latitude','Longitude','Logo Image Name','Address','Tel','Website URL']
     ['Shoryu Regent StShoryu Regent', 51.5083091, -0.1337397, 'tonkotsuEastLogo.png', 'Arch 334, 1a Dunston Street, E8 4EB', '020 7254 2478', 'tonkotsu.co.uk'],
     ['Shoryu Soho', 51.508358, -0.133765, 'tonkotsuEastLogo.png', 'Arch 334, 1a Dunston Street, E8 4EB', '020 7254 2478', 'tonkotsu.co.uk'],
     ['Shoryu Soho', 51.5125531, -0.1385048, 'tonkotsuEastLogo.png', 'Arch 334, 1a Dunston Street, E8 4EB', '020 7254 2478', 'tonkotsu.co.uk'],

@@ -3,8 +3,8 @@ var map = new google.maps.Map(document.getElementById('mapCanvas'), {
     center: new google.maps.LatLng(51.50722, -0.12750),
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     mapTypeControl: false,
-    panControl: false,
-    zoomControl: false,
+    panControl: true,
+    zoomControl: true,
     streetViewControl: false
 });
 
