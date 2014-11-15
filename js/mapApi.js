@@ -24,6 +24,16 @@ var infowindow = new google.maps.InfoWindow();
 var marker, i;
 var markers = new Array();
 var image = 'images/baloon.png';
+var selectedImage = 'images/baloon_active.png';
+
+/*
+var selectedMarker = function() {
+  for (var i = 0; i < shops.length; i++) {
+    shops[i].setIcon(image);
+  }
+  this.setIcon(selectedImage);
+}
+*/
 
 for (i = 0; i < shops.length; i++) {  
     marker = new google.maps.Marker({
@@ -52,10 +62,20 @@ for (i = 0; i < shops.length; i++) {
         ,pane: "floatPane"
         ,enableEventPropagation: false
     };
-    
+
     var ib = new InfoBox();
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
+            marker.setIcon(selectedImage);
+
+/*
+        if (selectedMarker) {
+            selectedMarker.setIcon(image);
+        }
+        marker.setIcon(selectedImage);
+        selectedMarker = marker;
+*/
+
             ib.setOptions(boxOptions);
             boxText.innerHTML =
               '<div class="infoWindowWrapper">' +
@@ -76,7 +96,16 @@ for (i = 0; i < shops.length; i++) {
             map.panTo(marker.getPosition({animate: true, duration: 1.0}));
         }
     })(marker, i));
+
+    google.maps.event.addListener(marker, 'click', function() {
+      marker.setIcon(selectedImage);
+    }(marker, i));
+    google.maps.event.addListener(marker, 'close', function() {
+      marker.setIcon(image);
+    }(marker, i));
 }
+
+
 
 function drop() {
     for (var i =0; i < marker.length; i++) {

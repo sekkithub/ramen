@@ -13,11 +13,6 @@ $.fn.animateBG = function(x, y, speed) {
     return this;
 }
 
-
-var infoWindow = $('.infoWindowWrapper');
-var infoWindowHeight = $('.infoWindowWrapper').css({ height: infoWindow.height() });
-console.log(infoWindowHeight);
-
 // Open About modal
 $(function() {
     var trigger = $('#hamburger'),
@@ -36,10 +31,10 @@ $(function() {
             top : '100px',
             opacity: 0
         }).each(function(i) {
-            $(this).delay(200 * i).animate({
+            $(this).delay(70 * i).animate({
                 top : '0',
                 opacity: 1
-            }, 700);
+            }, 600);
         });
         //Logo animation
         $('#aboutWrapper').animate({ 
