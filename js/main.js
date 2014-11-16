@@ -4,18 +4,18 @@ $(window).load(function(){
 
 
 $.fn.animateBG = function(x, y, speed) {
-    var pos = this.css('background-position').split(' ');
-    this.x = pos[0] || 0,
-    this.y = pos[1] || 0;
-    $.Animation( this, {
-        x: x,
-        y: y
-      }, { 
-        duration: speed
-      }).progress(function(e) {
-          this.css('background-position', e.tweens[0].now+'px '+e.tweens[1].now+'px');
-    });
-    return this;
+  var pos = this.css('background-position').split(' ');
+  this.x = pos[0] || 0,
+  this.y = pos[1] || 0;
+  $.Animation( this, {
+    x: x,
+    y: y
+  }, { 
+    duration: speed
+  }).progress(function(e) {
+    this.css('background-position', e.tweens[0].now+'px '+e.tweens[1].now+'px');
+  });
+  return this;
 }
 
 // Open About This Project
@@ -74,5 +74,4 @@ $(function() {
 
 $(".bubbleYuriy").prepend('<a href="http://oparenko.com/" target="_blank" title="Yuriy Oparenko\noparenko.com"><img src="images/iconYuiry.png" /></a>')
 $(".bubbleMasato").prepend('<a href="http://sekkithub.com/" target="_blank" title="Masato Seki\nsekkithub.com"><img src="images/iconMasato.png" /></a>')
-
 

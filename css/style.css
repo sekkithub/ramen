@@ -118,14 +118,6 @@ li {
   -ms-filter: invert(100%);
 }
 
-/*
-.gm-style {
-  .gmnoprint:last-child {
-    left: 34px !important;
-    bottom: 330px !important;
-  }
-}
-*/
 .infoWindowWrapper {
   background: #f1f0ee;
   box-sizing: border-box;
@@ -157,25 +149,8 @@ li {
   margin: 0 0 6px 0;
   font-size: 13px;
 }
-.infoWindowWrapper .shopContents {
-  /*
-      float: right;
-      width: 100%;
-      margin: 0 0 0 -250px;
-  */
-}
 .infoWindowWrapper .shopLogo {
   float: left;
-  /*
-      img {
-        margin-right: 15px;
-      }
-  */
-  /*
-      span {
-        font-size: 14px;
-      }
-  */
 }
 .infoWindowWrapper .shopAddress a {
   color: inherit;

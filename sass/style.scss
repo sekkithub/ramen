@@ -5,6 +5,9 @@
 @import "compass/utilities/sprites";
 @import "compass/css3/border-radius";
 
+$font-family:  "proxima-nova-soft",sans-serif;
+$font-style:  normal;
+
 %openSans {
     font-family: 'Open Sans', sans-serif;
     letter-spacing: .07em;
@@ -132,15 +135,6 @@ li {
     }
 }
 
-/*
-.gm-style {
-  .gmnoprint:last-child {
-    left: 34px !important;
-    bottom: 330px !important;
-  }
-}
-*/
-
 .infoWindowWrapper {
   background: #f1f0ee;
   box-sizing: border-box;
@@ -172,26 +166,10 @@ li {
   }
 
   .shopContents {
-/*
-    float: right;
-    width: 100%;
-    margin: 0 0 0 -250px;
-*/
   }
 
   .shopLogo {
     float: left;
-/*
-    img {
-      margin-right: 15px;
-    }
-*/
-    
-/*
-    span {
-      font-size: 14px;
-    }
-*/
   }
   
   .shopAddress {
