@@ -16,8 +16,9 @@ var mapOptions = {
   streetViewControl: false
 }
 
+
 var map = new google.maps.Map(document.getElementById('mapCanvas'),mapOptions);
-google.maps.event.addDomListener(window, 'load', mapOptions);
+google.maps.event.addDomListener(window, mapOptions);
 
 var infowindow = new google.maps.InfoWindow();
 
@@ -26,22 +27,14 @@ var markers = new Array();
 var image = 'images/baloon.png';
 var selectedImage = 'images/baloon_active.png';
 
-/*
-var selectedMarker = function() {
-  for (var i = 0; i < shops.length; i++) {
-    shops[i].setIcon(image);
-  }
-  this.setIcon(selectedImage);
-}
-*/
-
 for (i = 0; i < shops.length; i++) {  
+
     marker = new google.maps.Marker({
-        content: [],
-        position: new google.maps.LatLng(shops[i][1], shops[i][2]),
-        animation: google.maps.Animation.DROP,
-        map: map,
-        icon: image
+      content: [],
+      position: new google.maps.LatLng(shops[i][1], shops[i][2]),
+      animation: google.maps.Animation.DROP,
+      map: map,
+      icon: image
     });
 
     markers.push(marker);
@@ -66,15 +59,8 @@ for (i = 0; i < shops.length; i++) {
     var ib = new InfoBox();
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-            marker.setIcon(selectedImage);
 
-/*
-        if (selectedMarker) {
-            selectedMarker.setIcon(image);
-        }
-        marker.setIcon(selectedImage);
-        selectedMarker = marker;
-*/
+            marker.setIcon(selectedImage);
 
             ib.setOptions(boxOptions);
             boxText.innerHTML =
@@ -96,24 +82,8 @@ for (i = 0; i < shops.length; i++) {
             map.panTo(marker.getPosition({animate: true, duration: 1.0}));
         }
     })(marker, i));
-
-    google.maps.event.addListener(marker, 'click', function() {
-      marker.setIcon(selectedImage);
-    }(marker, i));
-    google.maps.event.addListener(marker, 'close', function() {
-      marker.setIcon(image);
-    }(marker, i));
 }
 
-
-
-function drop() {
-    for (var i =0; i < marker.length; i++) {
-        setTimeout(function() {
-            addMarkerMethod();
-        }, i * 200);
-    }
-}
 
 function toggleBounce() {
     if (marker.getAnimation() != null) {
@@ -122,7 +92,6 @@ function toggleBounce() {
         marker.setAnimation(google.maps.Animation.BOUNCE);
     }
 }
-
 
 function AutoCenter() {
     //  Create a new viewpoint bound

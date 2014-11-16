@@ -1,3 +1,8 @@
+$(window).load(function(){
+	$("#loading").fadeOut(700);
+});
+
+
 $.fn.animateBG = function(x, y, speed) {
     var pos = this.css('background-position').split(' ');
     this.x = pos[0] || 0,
@@ -13,7 +18,7 @@ $.fn.animateBG = function(x, y, speed) {
     return this;
 }
 
-// Open About modal
+// Open About This Project
 $(function() {
     var trigger = $('#hamburger'),
         isClosed = true;
@@ -28,13 +33,13 @@ $(function() {
         trigger.addClass('is-closed');
         isClosed = false;
         $('.aboutContents ul li').css({
-            top : '100px',
+            top : '70px',
             opacity: 0
         }).each(function(i) {
-            $(this).delay(70 * i).animate({
+            $(this).delay(40 * i).animate({
                 top : '0',
                 opacity: 1
-            }, 600);
+            }, 500);
         });
         //Logo animation
         $('#aboutWrapper').animate({ 
