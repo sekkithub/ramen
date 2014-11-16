@@ -58,11 +58,29 @@ li {
 }
 
 #mapCanvas {
+  bottom: 0;
   height: 100%;
+  position: absolute;
+  top: 0;
   width: 100%;
 }
 #mapCanvas img {
   max-width: none;
+}
+#mapCanvas #newPos {
+  position: fixed;
+  left: 34px;
+  bottom: 0;
+  margin: 0;
+}
+#mapCanvas .ctrl {
+  position: absolute;
+  bottom: 30px;
+  width: 88px;
+  height: 320px;
+}
+#mapCanvas .ctrl > .gmnoprint {
+  top: 0 !important;
 }
 
 /*
