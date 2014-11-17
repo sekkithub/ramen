@@ -30,7 +30,7 @@ var marker, i;
 var markers = new Array();
 var normalMarker = 'images/baloon.png';
 var selectedMarker = 'images/baloon_active.png';
-//var CurrentMarkerNo = -1;
+var CurrentMarkerNo = -1;
 
 for (i = 0; i < shops.length; i++) {  
 
@@ -64,8 +64,12 @@ for (i = 0; i < shops.length; i++) {
   var ib = new InfoBox();
   google.maps.event.addListener(marker, 'click', (function(marker, i) {
     return function() {
-//      changeMarkerImage(selectedMarker);
-      marker.setIcon(selectedMarker);
+      changeMarkerImage(selectedMarker);
+//      marker.setIcon(selectedMarker);
+      function changeMarkerImage() {
+        marker.setIcon(selectedMarker);
+      }
+
       ib.setOptions(boxOptions);
       boxText.innerHTML =
         '<div class="infoWindowWrapper">' +
@@ -85,8 +89,16 @@ for (i = 0; i < shops.length; i++) {
       ib.open(map, marker);
       map.panTo(marker.getPosition({animate: true, duration: 1.0}));
     }
-  })(marker, i));
+  })(marker, i)),
+  google.maps.event.addListener(ib_click, 'closeclick', function(marker, i){
+    //how to use closeclick 
+    //showing error here
+    alert('closed');
+  });
+  
 }
+
+
 
 
 /*
