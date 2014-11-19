@@ -1,105 +1,104 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="user-scalable=0, initial-scale=1.0">
-        <meta name="description" content="London Ramen Map is a curated directory of best ramen places in London">
-        <meta name="keywords" content="ramen,noodles,japanese,udon,london,cuisine,food">
-        <title>Ramen map of London</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="css/style.css" />
-        <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyB8aGjPPvmfOWtApq3oY3JeSxLphoC-uag&sensor=TRUE"></script>
-        <script type="text/javascript" src="js/infobox.js"></script>
-        <!--[if lt IE 8]>
-            <link href="stylesheets/ie.css" rel="stylesheet" />
-        <![endif]-->
-        <script src="//use.typekit.net/llc8ydg.js"></script>
-        <script>try{Typekit.load();}catch(e){}</script>
-    </head>
-    <body>
-        <div id="loading">
-          <img src="images/loading.gif" >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=0, initial-scale=1.0">
+    <meta name="description" content="London Ramen Map is a curated directory of best ramen places in London">
+    <meta name="keywords" content="ramen,noodles,japanese,udon,london,cuisine,food">
+    <title>London Ramen Map</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyB8aGjPPvmfOWtApq3oY3JeSxLphoC-uag&sensor=TRUE"></script>
+    <script type="text/javascript" src="js/infobox.js"></script>
+    <!--[if lt IE 8]>
+      <link href="stylesheets/ie.css" rel="stylesheet" />
+    <![endif]-->
+    <script src="//use.typekit.net/llc8ydg.js"></script>
+      <script>try{Typekit.load();}catch(e){}</script>
+  </head>
+  <body>
+    <div id="loading">
+      <img src="images/loading.gif" >
+    </div>
+
+    <!-- Facebook like button-->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '725243410880938',
+          xfbml      : true,
+          version    : 'v2.1'
+        });
+      };
+    
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <div id="wrapper">
+      <a href="/">
+        <div class="logo"></div>
+      </a>
+
+      <!-- Info Icon-->
+      <div id="hamburger" class="hamburglar is-open">
+        <div class="burger-icon">
+          <div class="burger-container">
+            <span class="burger-bun-top"></span>
+            <span class="burger-bun-bot"></span>
+          </div>
         </div>
+      </div>
+      <section id="mapCanvas"></section>
+    </div>
 
-        <!-- Facebook like button-->
-        <script>
-          window.fbAsyncInit = function() {
-            FB.init({
-              appId      : '725243410880938',
-              xfbml      : true,
-              version    : 'v2.1'
-            });
-          };
-        
-          (function(d, s, id){
-             var js, fjs = d.getElementsByTagName(s)[0];
-             if (d.getElementById(id)) {return;}
-             js = d.createElement(s); js.id = id;
-             js.src = "//connect.facebook.net/en_US/sdk.js";
-             fjs.parentNode.insertBefore(js, fjs);
-           }(document, 'script', 'facebook-jssdk'));
-        </script>
+    <div id="aboutWrapper">
+      <div class="aboutContents">
+        <h2>ABOUT THE PROJECT</h2>
+        <ul>
+          <li class="bubbleYuriy bubbleChat">
+            In fall 2013 my friend Masato introduced me to the beautiful world of Japanese ramen. I instantly became obsessed.
+          </li>
+          <li class="bubbleMasato bubbleChat">
+            London’s ramen scene is not that big, but there are some nice places. 
+            So Yuriy designed and I coded the Ramen Map of London to help fellow ramen-lovers to find a decent bowl.
+          </li>
+          <li class="bubbleYuriy bubbleChat">This is still very much an MVP, but we have big plans.</li>
+          <li class="bubbleMasato bubbleChat">
+            Follow us on <a href="https://twitter.com/londonramenmap" target="_blank">Twitter</a> or <a href="https://www.facebook.com/londonramenmap" target="_blank">Facebook</a>. And please do <a href="mailto:yum@londonramenmap.uk">drop us a line</a> if you you know something that we don't.
+          </li>
+        </ul>
+      </div>
+    </div>
 
-        <div id="wrapper">
-            <a href="/">
-              <div class="logo"></div>
-            </a>
+    <section id="sns">
+      <div id="fb-root"></div>
+      <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fsekkithub.com%2Fdev%2Framen%2F&amp;width=90&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=725243410880938" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true">
+      </iframe>
+      <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+      </script>
+    </section>
 
-            <!-- Info Icon-->
-            <div id="hamburger" class="hamburglar is-open">
-                <div class="burger-icon">
-                  <div class="burger-container">
-                    <span class="burger-bun-top"></span>
-                    <span class="burger-bun-bot"></span>
-                  </div>
-                </div>
-            </div>
+    <script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="js/shops.js"></script>
+    <script type="text/javascript" src="js/mapApi.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-45171081-7', 'auto');
+      ga('send', 'pageview');
+    </script>
 
-            <section id="mapCanvas"></section>
-        </div>
-
-        <div id="aboutWrapper">
-              <div class="aboutContents">
-                <h2>ABOUT THE PROJECT</h2>
-                <ul>
-                    <li class="bubbleYuriy bubbleChat">
-                        In fall 2013 my friend Masato introduced me to the beautiful world of Japanese ramen. I instantly became obsessed.
-                    </li>
-                    <li class="bubbleMasato bubbleChat">
-                        London’s ramen scene is not that big, but there are some nice places. 
-                        So Yuriy designed and I coded the Ramen Map of London to help fellow ramen-lovers to find a decent bowl.
-                    </li>
-                    <li class="bubbleYuriy bubbleChat">This is still very much an MVP, but we have big plans.</li>
-                    <li class="bubbleMasato bubbleChat">
-                        Follow us on <a href="https://twitter.com/RamenMapLDN" target="_blank">Twitter</a> or <a href="https://www.facebook.com/ramenmapoflondon" target="_blank">Facebook</a>. And please do <a href="mailto:yum@londonramenmap.uk">drop us a line</a> if you you know something that we don't.
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <section id="sns">
-            <div id="fb-root"></div>
-            <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fsekkithub.com%2Fdev%2Framen%2F&amp;width=90&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=725243410880938" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true">
-            </iframe>
-            <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-            </script>
-        </section>
-
-        <script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js"></script>
-        <script type="text/javascript" src="js/shops.js"></script>
-        <script type="text/javascript" src="js/mapApi.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
-        
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        
-          ga('create', 'UA-45171081-7', 'auto');
-          ga('send', 'pageview');
-        </script>
-
-    </body>
+  </body>
 </html>
