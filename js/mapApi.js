@@ -65,7 +65,7 @@ for (i = 0; i < shops.length; i++) {
   google.maps.event.addListener(marker, 'click', (function(marker, i) {
     return function() {
       console.log(markers);
-      
+       
       google.maps.event.addListener(ib, 'closeclick', function() {
         marker.setIcon(normalMarker);
       });
