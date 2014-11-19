@@ -1,11 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans:400,300,700,600);
-body, #aboutWrapper .aboutContents ul {
+body, .infoWindowWrapper, #aboutWrapper .aboutContents ul li {
   font-family: "proxima-nova-soft",sans-serif;
   font-style: normal;
   font-weight: 400;
 }
 
-#aboutWrapper h3 {
+.infoWindowWrapper h4, #aboutWrapper h3, #aboutWrapper .aboutContents h2 {
   font-family: "proxima-nova-soft",sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -147,7 +147,6 @@ li {
 }
 .infoWindowWrapper p {
   display: block;
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   margin: 0 0 6px 0;
   font-size: 13px;
 }

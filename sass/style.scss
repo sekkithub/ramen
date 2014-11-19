@@ -149,12 +149,11 @@ li {
   box-sizing: border-box;
   height: auto;
   min-height: 146px;
-//   left:-194px;
   letter-spacing: 0;
   min-width: 390px;
   padding: 20px;
   position: relative;
-//   top: -216px;
+  @extend %proximaN;
   @include border-radius(5px);
   @include box-shadow(rgba(0,0,0,0.3) 0px 4px 10px);
 
@@ -164,13 +163,13 @@ li {
   }
 
   h4 {
+    @extend %proximaB;
     font-size: 17px;
     margin: 0 0 6px 0;
   }
 
   p {
     display: block;
-    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     margin: 0 0 6px 0;
     font-size: 13px;
   }
@@ -460,6 +459,7 @@ $scale: 1;    // icon scale 68/68 default
     @include background-size(cover);
     
     h2 {
+      @extend %proximaB;
       color: #fff;
       font-size: 40px;
       letter-spacing: 0;
@@ -469,7 +469,6 @@ $scale: 1;    // icon scale 68/68 default
     }
 
     ul{
-      @extend %proximaN;
       bottom: 0;
       font-size: .9em;
       font-weight: 400;
@@ -486,6 +485,7 @@ $scale: 1;    // icon scale 68/68 default
       z-index: 10;
   
       li {
+        @extend %proximaN;
         position: relative;
       }
     }
