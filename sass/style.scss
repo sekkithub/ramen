@@ -5,44 +5,53 @@
 @import "compass/utilities/sprites";
 @import "compass/css3/border-radius";
 
-$font-family:  "proxima-nova-soft",sans-serif;
-$font-style:  normal;
+%proximaN {
+  font-family: "proxima-nova-soft",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+%proximaB {
+  font-family: "proxima-nova-soft",sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
 
 %openSans {
-    font-family: 'Open Sans', sans-serif;
-    letter-spacing: .07em;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: .07em;
 }
 
 %fjalla {
-    font-family: 'Fjalla One', sans-serif;
+  font-family: 'Fjalla One', sans-serif;
 }
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 
 body, html {
-    height: 100%;
-    line-height: 16px;
-    width: 100%;
+  height: 100%;
+  line-height: 16px;
+  width: 100%;
 }
 
 body {
-    @extend %openSans;
-    font-size: $px20;
-    margin: 0;
-    padding: 0;
+  @extend %proximaN;
+  font-size: $px20;
+  margin: 0;
+  padding: 0;
 }
 
 h1, p, ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 #loading {
@@ -106,33 +115,33 @@ li {
 	SNS buttons Section
  */
 #sns {
-    position: fixed;
-    bottom: 20px;
-    right: 4px;
-    z-index: 100000;
+  position: fixed;
+  bottom: 20px;
+  right: 4px;
+  z-index: 100000;
 }
 
 .twitter-share-button {
-    max-width:90px;
+  max-width:90px;
 }
 
 .logo {
-    $logo: sprite-map("logo/*.png");
-    background: $logo;
-    width: 120px;
-    height: 129px;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 10000;
-    
-    img.invert {
-        @include filter(invert(100%));
-        @include transition(all .3s linear);
-        filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="invert"><feColorMatrix color-interpolation-filters="sRGB" in="SourceGraphic" type="matrix" values="-1,0,0,0,1,0,-1,0,0,1,0,0,-1,0,1,0,0,0,1,0"/></filter></svg>#invert');
-        filter: invert(100%);
-        -ms-filter: invert(100%);
-    }
+  $logo: sprite-map("logo/*.png");
+  background: $logo;
+  width: 120px;
+  height: 129px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 10000;
+  
+  img.invert {
+    @include filter(invert(100%));
+    @include transition(all .3s linear);
+    filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="invert"><feColorMatrix color-interpolation-filters="sRGB" in="SourceGraphic" type="matrix" values="-1,0,0,0,1,0,-1,0,0,1,0,0,-1,0,1,0,0,0,1,0"/></filter></svg>#invert');
+    filter: invert(100%);
+    -ms-filter: invert(100%);
+  }
 }
 
 .infoWindowWrapper {
@@ -151,6 +160,7 @@ li {
 
   .movableContents {
     margin: 0 0 0 127px;
+    padding-top: 3px;
   }
 
   h4 {
@@ -205,210 +215,210 @@ $animation: 0.2s;   // animation speed
 $scale: 1;    // icon scale 68/68 default
 
 .hamburglar {
-    @include border-radius(15px);
-    background: #000;
-    cursor: pointer;
-    display: block;
-    height: 30px;
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    transform: scale($scale);
-    width: 30px;
-    z-index: 10000;
+  @include border-radius(15px);
+  background: #000;
+  cursor: pointer;
+  display: block;
+  height: 30px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  transform: scale($scale);
+  width: 30px;
+  z-index: 10000;
 }
 
 
 // All good burgers need filling!
 .burger-icon {
-    position: absolute;
-    height: 30px;
-    width: 30px;
+  position: absolute;
+  height: 30px;
+  width: 30px;
 }
 
 .burger-container {
-    position: relative;
-    height: 30px;
-    width: 30px;
+  position: relative;
+  height: 30px;
+  width: 30px;
 }
 
 .burger-bun-top,
 .burger-bun-bot {
-    @include border-radius(2px);
-    position: absolute;
-    display: block;
-    height: 4px;
-    width: 12px;
-    background: $color;
+  @include border-radius(2px);
+  position: absolute;
+  display: block;
+  height: 4px;
+  width: 12px;
+  background: $color;
 }
 
 .burger-bun-top {
-    width: 4px;
+  width: 4px;
 }
 
 //transform origin
 @mixin transform-origin ($origin) {
-    moz-transform-origin: $origin;
-    -o-transform-origin: $origin;
-    -ms-transform-origin: $origin;
-    -webkit-transform-origin: $origin;
-    transform-origin: $origin;
+  moz-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+  transform-origin: $origin;
 }
 
 
 .burger-bun-top {
-    @include transform-origin(2px 5px);
+  @include transform-origin(2px 5px);
 }
 
 .burger-bun-bot {
-    @include transform-origin(14.6px 2.2px);
+  @include transform-origin(14.6px 2.2px);
 }
 
 // bun animations 
 .hamburglar.is-open {
-    .burger-bun-top {
-        @include animation(bun-top-out $animation linear normal);
-        @include animation-fill-mode(forwards);
-    }
-    .burger-bun-bot {
-        @include animation(bun-bot-out $animation linear normal);
-        @include animation-fill-mode(forwards);
-    }
+  .burger-bun-top {
+    @include animation(bun-top-out $animation linear normal);
+    @include animation-fill-mode(forwards);
+  }
+  .burger-bun-bot {
+    @include animation(bun-bot-out $animation linear normal);
+    @include animation-fill-mode(forwards);
+  }
 }
 .hamburglar.is-closed {
-    .burger-bun-top {
-        @include animation(bun-top-in $animation linear normal);
-        @include animation-fill-mode(forwards);
-    }
-    .burger-bun-bot {
-        @include animation(bun-bot-in $animation linear normal);
-        @include animation-fill-mode(forwards);
-    }
+  .burger-bun-top {
+    @include animation(bun-top-in $animation linear normal);
+    @include animation-fill-mode(forwards);
+  }
+  .burger-bun-bot {
+    @include animation(bun-bot-in $animation linear normal);
+    @include animation-fill-mode(forwards);
+  }
 }
 
 @include keyframes(bun-top-in) {
-    0% {
-        left: 10px;
-        top: 4px;
-        @include rotate (90deg);
-    }
-    20% {
-        left: 10px;
-        top: 6px;
-        @include rotate (75deg);
-    }
-    80% {
-        left: 8px;
-        top: 6px;
-        @include rotate (60deg);
-    }
-    100% {
-        background-color: #000;
-        left: 6px;
-        height: 3px;
-        top: 8px;
-        width: 16px;
-        @include rotate (45deg);
-        @include transition-property(width);
-        @include transition-property(background-color);
-    }
+  0% {
+    left: 10px;
+    top: 4px;
+    @include rotate (90deg);
+  }
+  20% {
+    left: 10px;
+    top: 6px;
+    @include rotate (75deg);
+  }
+  80% {
+    left: 8px;
+    top: 6px;
+    @include rotate (60deg);
+  }
+  100% {
+    background-color: #000;
+    left: 6px;
+    height: 3px;
+    top: 8px;
+    width: 16px;
+    @include rotate (45deg);
+    @include transition-property(width);
+    @include transition-property(background-color);
+  }
 }
 
 @include keyframes(bun-top-out) {
-    0% {
-        left: 6px;
-        top: 7px;
-        width: 20px;
-        @include transition-property(width);
-        @include rotate (45deg);
-    }
-    20% {
-        left: 8px;
-        top: 6px;
-        @include rotate (60deg);
-    }
-    80% {
-        left: 10px;
-        top: 6px;
-        @include rotate (75deg);
-    }
-    100% {
-        background-color: #fff;
-        left: 10px;
-        top: 4px;
-        @include rotate (90deg);
-        @include transition-property(background-color);
-    }
+  0% {
+    left: 6px;
+    top: 7px;
+    width: 20px;
+    @include transition-property(width);
+    @include rotate (45deg);
+  }
+  20% {
+    left: 8px;
+    top: 6px;
+    @include rotate (60deg);
+  }
+  80% {
+    left: 10px;
+    top: 6px;
+    @include rotate (75deg);
+  }
+  100% {
+    background-color: #fff;
+    left: 10px;
+    top: 4px;
+    @include rotate (90deg);
+    @include transition-property(background-color);
+  }
 }
 
 @include keyframes(bun-bot-in) {
-    0% {
-        left: 0px;
-        bottom: 2px;
-        width: 12px;
-        @include rotate (90deg);
-        @include transition-property(width);
-    }
-    20% {
-        left: -2px;
-        width: 15px;
-        @include rotate (105deg);
-        @include transition-property(width);
-    }
-    80% {
-        left: -2px;
-        width: 18px;
-        @include rotate (120deg);
-        @include transition-property(width);
-    }
-    100% {
-        background-color: #000;
-        height: 3px;
-        left: -5px;
-        bottom: 10px;
-        width: 16px;
-        @include rotate (135deg);
-        @include transition-property(width);
-        @include transition-property(background-color);
-    }
+  0% {
+    left: 0px;
+    bottom: 2px;
+    width: 12px;
+    @include rotate (90deg);
+    @include transition-property(width);
+  }
+  20% {
+    left: -2px;
+    width: 15px;
+    @include rotate (105deg);
+    @include transition-property(width);
+  }
+  80% {
+    left: -2px;
+    width: 18px;
+    @include rotate (120deg);
+    @include transition-property(width);
+  }
+  100% {
+    background-color: #000;
+    height: 3px;
+    left: -5px;
+    bottom: 10px;
+    width: 16px;
+    @include rotate (135deg);
+    @include transition-property(width);
+    @include transition-property(background-color);
+  }
 }
 
 @include keyframes(bun-bot-out) {
-    0% {
-        left: -2px;
-        bottom: 11px;
-        width: 20px;
-        @include rotate (135deg);
-        @include transition-property(width);
-    }
-    20% {
-        left: -2px;
-        width: 18px;
-        @include rotate (120deg);
-        @include transition-property(width);
-    }
-    80% {
-        left: -2px;
-        width: 15px;
-        @include rotate (105deg);
-        @include transition-property(width);
-    }
-    100% {
-        background-color: #fff;
-        left: 0px;
-        bottom: 2px;
-        width: 12px;
-        @include rotate (90deg);
-        @include transition-property(width);
-        @include transition-property(background-color);
-    }
+  0% {
+    left: -2px;
+    bottom: 11px;
+    width: 20px;
+    @include rotate (135deg);
+    @include transition-property(width);
+  }
+  20% {
+    left: -2px;
+    width: 18px;
+    @include rotate (120deg);
+    @include transition-property(width);
+  }
+  80% {
+    left: -2px;
+    width: 15px;
+    @include rotate (105deg);
+    @include transition-property(width);
+  }
+  100% {
+    background-color: #fff;
+    left: 0px;
+    bottom: 2px;
+    width: 12px;
+    @include rotate (90deg);
+    @include transition-property(width);
+    @include transition-property(background-color);
+  }
 }
 
 .shopLink {
-    a {
-        color: #cb0019;
-        font-size: 14px;
-    }
+  a {
+    color: #cb0019;
+    font-size: 14px;
+  }
 }
 
 .infoBox img {
@@ -417,123 +427,122 @@ $scale: 1;    // icon scale 68/68 default
 }
 
 #aboutWrapper {
-    background: #000;
-    height: 100%;
-    left: 0;
-    opacity: 0;
+  background: #000;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+  z-index: 1000;
+
+  h3 {
+    @extend %proximaB;
+    color: #fff;
+    font-size: $px27;
+    left: 50%;
+    letter-spacing: .01em;
+    margin: 0  0 0 -143px;
     position: absolute;
+    top: 80px;
+  }
+
+  .aboutContents {
+    background: url(../images/aboutBg.jpg) no-repeat center center fixed;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
     top: 0;
-    width: 100%;
-    visibility: hidden;
-    z-index: 1000;
-
-    h3 {
-        @extend %fjalla;
-        color: #fff;
-        font-size: $px27;
-        left: 50%;
-        letter-spacing: .01em;
-        margin: 0  0 0 -143px;
-        position: absolute;
-        top: 80px;
+    z-index: -10;
+    @include background-size(cover);
+    
+    h2 {
+      color: #fff;
+      font-size: 40px;
+      letter-spacing: 0;
+      margin-top: 110px;
+      min-width: 720px;
+      text-align: center;
     }
 
-    .aboutContents {
-        background: url(../images/aboutBg.jpg) no-repeat center center fixed;
-        bottom: 0;
-        left: 0;
-        margin: auto;
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: -10;
-        @include background-size(cover);
-        
-        h2 {
-          color: #fff;
-          font-size: 40px;
-          letter-spacing: 0;
-          margin-top: 110px;
-          min-width: 720px;
-          text-align: center;
-        }
-
-        ul{
-            @extend %openSans;
-            bottom: 0;
-            font-size: .9em;
-            font-weight: 400;
-            height: 330px;
-            left: 0;
-            letter-spacing: .02em;
-            line-height: 20px;
-            margin: auto;
-            padding: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 720px;
-            z-index: 10;
-        
-            li {
-                position: relative;
-            }
-        
-        }
-
-        .bubbleYuriy,
-        .bubbleMasato {
-            background: #fff;
-            margin: 16px auto;
-            padding: 11px 16px;
-            position: relative;
-            width: 550px;
-            @include border-radius(3px);
-            
-            img {
-                position: absolute;
-                top: -4px;
-            }
-        }
-
-        .bubbleYuriy img {
-            left: -70px;
-        }
-        
-        .bubbleMasato img {
-            right: -70px;
-        }
-
-
-        .bubbleYuriy:after,
-        .bubbleMasato:after {
-            border-style: solid;
-            border-color: transparent #fff;
-            content: "";
-            position: absolute;
-            top: 13px;
-            display: block;
-            width: 0;
-            z-index: 1;
-        }
-
-        .bubbleYuriy:after {
-            border-width: 8px 8px 8px 0;
-            left: -8px;
-        }
-
-        .bubbleMasato:after {
-            border-width: 8px 0 8px 8px;
-            right: -8px;
-        }
-
-        a {
-            color: #000;
-            text-decoration: underline;
-        }
-        a:hover {
-            color: #999;
-        }
+    ul{
+      @extend %proximaN;
+      bottom: 0;
+      font-size: .9em;
+      font-weight: 400;
+      height: 330px;
+      left: 0;
+      letter-spacing: .02em;
+      line-height: 20px;
+      margin: auto;
+      padding: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 720px;
+      z-index: 10;
+  
+      li {
+        position: relative;
+      }
     }
 
+    .bubbleYuriy,
+    .bubbleMasato {
+      background: #fff;
+      margin: 16px auto;
+      padding: 11px 16px;
+      position: relative;
+      width: 550px;
+      @include border-radius(3px);
+        
+      img {
+        position: absolute;
+        top: -4px;
+      }
+    }
+
+    .bubbleYuriy img {
+      left: -70px;
+    }
+    
+    .bubbleMasato img {
+      right: -70px;
+    }
+
+
+    .bubbleYuriy:after,
+    .bubbleMasato:after {
+      border-style: solid;
+      border-color: transparent #fff;
+      content: "";
+      position: absolute;
+      top: 13px;
+      display: block;
+      width: 0;
+      z-index: 1;
+    }
+
+    .bubbleYuriy:after {
+      border-width: 8px 8px 8px 0;
+      left: -8px;
+    }
+
+    .bubbleMasato:after {
+      border-width: 8px 0 8px 8px;
+      right: -8px;
+    }
+
+    a {
+      color: #000;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #999;
+    }
+  }
 }

@@ -338,9 +338,8 @@ InfoBox.prototype.panBox_ = function (disablePan) {
 
 
       var iwOffsetDiff = iwHeight - 146;
-      var ibPosY = iwOffsetY - iwOffsetDiff + 220;
-      console.log(ibPosY);
-      this.pixelOffset_ = new google.maps.Size(-195, ibPosY - 220);
+      var ibPosY = iwOffsetY - iwOffsetDiff;
+      this.pixelOffset_ = new google.maps.Size(-195, ibPosY);
 
 
       if (pixPosition.x < (-iwOffsetX + padX)) {
