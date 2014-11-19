@@ -61,22 +61,18 @@ for (i = 0; i < shops.length; i++) {
     enableEventPropagation: false
   };
 
-  var mmm = marker.getIcon();
   var ib = new InfoBox();
   google.maps.event.addListener(marker, 'click', (function(marker, i) {
     return function() {
-
-
-      if (marker.getIcon() == normalMarker) {
-        marker.setIcon(selectedMarker);
-      } else {
-        marker.setIcon(normalMarker);
-      } 
-
+      console.log(markers);
+      
       google.maps.event.addListener(ib, 'closeclick', function() {
         marker.setIcon(normalMarker);
       });
 
+      if (marker.getIcon() == normalMarker) {
+        marker.setIcon(selectedMarker);
+      }
 
       ib.setOptions(boxOptions);
 
@@ -100,14 +96,6 @@ for (i = 0; i < shops.length; i++) {
       map.panTo(marker.getPosition({animate: true, duration: 1.0}));
     }
   })(marker, i));
-/*
-
-  google.maps.event.addDomListener(marker,'closeclick',(function(marker, i) {
-    return function() {
-      alert('clicked' + shops[i][0])
-    }
-  })(marker, i));
-*/
 }
 
 //  Create a new viewpoint bound
