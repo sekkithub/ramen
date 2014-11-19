@@ -83,17 +83,16 @@
  * @param {InfoBoxOptions} [opt_opts]
  */
 function InfoBox(opt_opts) {
-
   opt_opts = opt_opts || {};
-
   google.maps.OverlayView.apply(this, arguments);
 
   // Standard options (in common with google.maps.InfoWindow):
   //
+
   this.content_ = opt_opts.content || "";
   this.disableAutoPan_ = opt_opts.disableAutoPan || false;
   this.maxWidth_ = opt_opts.maxWidth || 0;
-  this.pixelOffset_ = opt_opts.pixelOffset || new google.maps.Size(0, 0);
+  this.pixelOffset_ = opt_opts.pixelOffset || new google.maps.Size(-195, -220);
   this.position_ = opt_opts.position || new google.maps.LatLng(0, 0);
   this.zIndex_ = opt_opts.zIndex || null;
 
@@ -337,12 +336,19 @@ InfoBox.prototype.panBox_ = function (disablePan) {
       var padY = this.infoBoxClearance_.height;
       var pixPosition = this.getProjection().fromLatLngToContainerPixel(this.position_);
 
+
+      var iwOffsetDiff = iwHeight - 146;
+      var ibPosY = iwOffsetY - iwOffsetDiff + 220;
+      console.log(ibPosY);
+      this.pixelOffset_ = new google.maps.Size(-195, ibPosY - 220);
+
+
       if (pixPosition.x < (-iwOffsetX + padX)) {
         xOffset = pixPosition.x + iwOffsetX - padX;
       } else if ((pixPosition.x + iwWidth + iwOffsetX + padX) > mapWidth) {
         xOffset = pixPosition.x + iwWidth + iwOffsetX + padX - mapWidth;
       }
-      if (this.alignBottom_) {
+      if (this.x_) {
         if (pixPosition.y < (-iwOffsetY + padY + iwHeight)) {
           yOffset = pixPosition.y + iwOffsetY - padY - iwHeight;
         } else if ((pixPosition.y + iwOffsetY + padY) > mapHeight) {

@@ -47,30 +47,32 @@ for (i = 0; i < shops.length; i++) {
   var boxText = document.createElement("div");
 
   var boxOptions = {
-    content: boxText
-    ,disableAutoPan: false
-    ,maxWidth: 400
-    ,pixelOffset: new google.maps.Size(0, 0)
-    ,zIndex: null
-    ,boxStyle: {width: "0px"}
-    ,closeBoxMargin: "10px"
-    ,closeBoxURL: "images/close.png"
-    ,infoBoxClearance: new google.maps.Size(1, 1)
-    ,isHidden: false
-    ,pane: "floatPane"
-    ,enableEventPropagation: false
+    content: boxText,
+    disableAutoPan: false,
+    maxWidth: 400,
+   pixelOffset: new google.maps.Size(-195, -220),
+    zIndex: null,
+    boxStyle: {
+      width: "390px"
+    },
+    closeBoxMargin: "10px",
+    closeBoxURL: "images/close.png",
+    infoBoxClearance: new google.maps.Size(1, 1),
+    isHidden: false,
+    pane: "floatPane",
+    enableEventPropagation: false
   };
 
   var ib = new InfoBox();
   google.maps.event.addListener(marker, 'click', (function(marker, i) {
     return function() {
       changeMarkerImage(selectedMarker);
-//      marker.setIcon(selectedMarker);
       function changeMarkerImage() {
         marker.setIcon(selectedMarker);
       }
 
       ib.setOptions(boxOptions);
+
       boxText.innerHTML =
         '<div class="infoWindowWrapper">' +
           '<div class="shopLogo"><img src="images/shopLogos/' + shops[i][3] + '"></div>' +
@@ -86,16 +88,12 @@ for (i = 0; i < shops.length; i++) {
           '</div>' +
         '</div>'
       ;
+
       ib.open(map, marker);
       map.panTo(marker.getPosition({animate: true, duration: 1.0}));
+
     }
-  })(marker, i)),
-  google.maps.event.addListener(ib_click, 'closeclick', function(marker, i){
-    //how to use closeclick 
-    //showing error here
-    alert('closed');
-  });
-  
+  })(marker, i))  
 }
 
 

@@ -123,12 +123,10 @@ li {
   box-sizing: border-box;
   height: auto;
   min-height: 146px;
-  left: -194px;
   letter-spacing: 0;
   min-width: 390px;
   padding: 20px;
   position: relative;
-  top: -216px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -763,6 +761,11 @@ li {
 .shopLink a {
   color: #cb0019;
   font-size: 14px;
+}
+
+.infoBox img {
+  top: 0 !important;
+  right: 0 !important;
 }
 
 #aboutWrapper {

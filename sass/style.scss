@@ -140,12 +140,12 @@ li {
   box-sizing: border-box;
   height: auto;
   min-height: 146px;
-  left:-194px;
+//   left:-194px;
   letter-spacing: 0;
   min-width: 390px;
   padding: 20px;
   position: relative;
-  top: -216px;
+//   top: -216px;
   @include border-radius(5px);
   @include box-shadow(rgba(0,0,0,0.3) 0px 4px 10px);
 
@@ -409,6 +409,11 @@ $scale: 1;    // icon scale 68/68 default
         color: #cb0019;
         font-size: 14px;
     }
+}
+
+.infoBox img {
+  top: 0 !important;
+  right: 0 !important;
 }
 
 #aboutWrapper {
