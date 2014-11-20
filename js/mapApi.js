@@ -61,21 +61,28 @@ for (i = 0; i < shops.length; i++) {
     enableEventPropagation: false
   };
 
+  var gmarkers = [];
   var ib = new InfoBox();
   google.maps.event.addListener(marker, 'click', (function(marker, i) {
     return function() {
-      console.log(markers);
-       
+      // reset marker icon when you click the other markers
+      for (var i=0; i<gmarkers.length; i++) {
+         gmarkers[i].setIcon(normalMarker);
+      }
+      // reset marker icon when you click close button on infoBox
       google.maps.event.addListener(ib, 'closeclick', function() {
         marker.setIcon(normalMarker);
       });
 
+      // change marker image when you click a marker
       if (marker.getIcon() == normalMarker) {
         marker.setIcon(selectedMarker);
       }
 
+      // infoBox options
       ib.setOptions(boxOptions);
-
+      
+      // infoBox contents
       boxText.innerHTML =
         '<div class="infoWindowWrapper">' +
           '<div class="shopLogo"><img src="images/shopLogos/' + shops[i][3] + '"></div>' +
@@ -93,7 +100,12 @@ for (i = 0; i < shops.length; i++) {
       ;
       
       ib.open(map, marker);
+
+      //animate to selected marker
       map.panTo(marker.getPosition({animate: true, duration: 1.0}));
+
+      // reset marker image
+      gmarkers.push(marker);
     }
   })(marker, i));
 }
